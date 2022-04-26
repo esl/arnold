@@ -27,6 +27,9 @@ a monitored metric reaches a certain threshold, dynamic alerts, and much more.
 Arnold is capable of returning the trend and seasonality components, which are calculated with
 a decomposition method, then added back to the final prediction result.
 
+Documentation is available [here](https://esl.github.io/arnold/)
+
+
 # Installation & Usage
 
 ## Packages
@@ -146,7 +149,7 @@ Returning data is [Highcharts](https://www.highcharts.com/) friendly for easier 
  - `dialyzer`: Runs dialyzer
  - `clean`: Cleans the folder like it was just cloned
 
-### Usage
+### Useage
 ```bash
 foo@bar:~$ make COMMAND
 ```
