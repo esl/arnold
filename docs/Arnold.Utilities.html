@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="Arnold v0.6.2">
+
+    <title>Arnold.Utilities — Arnold v0.6.2</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-bc1991841a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="Arnold.html">
+        <img src="assets/logo.png" alt="Arnold" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="Arnold.html" class="sidebar-projectName" translate="no">
+Arnold
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.6.2
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Arnold.Utilities</span> 
+  <small class="app-vsn" translate="no">(Arnold v0.6.2)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Collection of utility functions including id generation, truncate and normalization functions.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#denormalize/3" translate="no">denormalize(x, min, max)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Denormalizes a value with the given <code class="inline">min</code> and <code class="inline">max</code> value.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#id/2" translate="no">id(id1, id2)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Return a generated UUID v5 based on the given ids.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#integer_to_boolean/1" translate="no">integer_to_boolean(number)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#is_constant?/1" translate="no">is_constant?(list)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Checks if the given list is only has constant values.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#normal_result/1" translate="no">normal_result(result_of_normalize_function)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Returns the result of the normalize function return value.
+Mainly used in pipe operations</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#normalize/1" translate="no">normalize(inputs)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Normalizes a list of floats or integers with min-max normalization.
+Automatically gets the minimum and maximum values from the given list.
+Calls to <a href="#normalize/3"><code class="inline">Arnold.Utilities.normalize/3</code></a></p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#normalize/3" translate="no">normalize(inputs, min, max)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Normalizes a list of floats or integers, or single values with min-max normalization.
+For every element <a href="#normalize/3"><code class="inline">Arnold.Utilities.normalize/3</code></a> is called.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#truncate/2" translate="no">truncate(inputs, threshold)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Truncates a given list to the given length</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="denormalize/3">
+
+  <div class="detail-header">
+    <a href="#denormalize/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">denormalize(x, min, max)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> denormalize(x :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>(), min :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>(), max :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()</pre>
+
+      </div>
+
+<p>Denormalizes a value with the given <code class="inline">min</code> and <code class="inline">max</code> value.</p><p>Example:
+iex(1)&gt; Arnold.Utilities.denormalize(0.75,1,5)
+4.0
+iex(2)&gt;</p>
+  </section>
+</section>
+<section class="detail" id="id/2">
+
+  <div class="detail-header">
+    <a href="#id/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">id(id1, id2)</h1>
+
+
+      <span class="note">(since 0.6.2)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> id(id1 :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), id2 :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()</pre>
+
+      </div>
+
+<p>Return a generated UUID v5 based on the given ids.</p><h2 id="id/2-example" class="section-heading">
+  <a href="#id/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">id</span><span class="p" data-group-id="2382721521-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor&quot;</span><span class="p" data-group-id="2382721521-1">)</span><span class="w">
+</span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="integer_to_boolean/1">
+
+  <div class="detail-header">
+    <a href="#integer_to_boolean/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">integer_to_boolean(number)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="is_constant?/1">
+
+  <div class="detail-header">
+    <a href="#is_constant?/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">is_constant?(list)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> is_constant?(x :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()</pre>
+
+      </div>
+
+<p>Checks if the given list is only has constant values.</p><h2 id="is_constant?/1-example" class="section-heading">
+  <a href="#is_constant?/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">is_constant?</span><span class="p" data-group-id="5243901608-1">(</span><span class="p" data-group-id="5243901608-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="5243901608-2">]</span><span class="p" data-group-id="5243901608-1">)</span><span class="w">
+</span><span class="no">false</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="normal_result/1">
+
+  <div class="detail-header">
+    <a href="#normal_result/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">normal_result(result_of_normalize_function)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> normal_result({x :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>(), min :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>(), max :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()}) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()]</pre>
+
+      </div>
+
+<p>Returns the result of the normalize function return value.
+Mainly used in pipe operations</p><h2 id="normal_result/1-example" class="section-heading">
+  <a href="#normal_result/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="9893234543-1">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="9893234543-1">)</span><span class="w">
+</span><span class="gp unselectable">...(1)&gt; </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normal_result</span><span class="w">
+</span><span class="mf">0.75</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="normalize/1">
+
+  <div class="detail-header">
+    <a href="#normalize/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">normalize(inputs)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> normalize(inputs :: [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()]) :: {[<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()], <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()}</pre>
+
+      </div>
+
+<p>Normalizes a list of floats or integers with min-max normalization.
+Automatically gets the minimum and maximum values from the given list.
+Calls to <a href="#normalize/3"><code class="inline">Arnold.Utilities.normalize/3</code></a></p><h2 id="normalize/1-example" class="section-heading">
+  <a href="#normalize/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="9869515021-1">(</span><span class="p" data-group-id="9869515021-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="9869515021-2">]</span><span class="p" data-group-id="9869515021-1">)</span><span class="w">
+</span><span class="p" data-group-id="9869515021-3">{</span><span class="p" data-group-id="9869515021-4">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p" data-group-id="9869515021-4">]</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9869515021-3">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="normalize/3">
+
+  <div class="detail-header">
+    <a href="#normalize/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">normalize(inputs, min, max)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> normalize(x :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>(), min :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>(), max :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()) ::
+  {<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | [<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()], <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()}</pre>
+
+      </div>
+
+<p>Normalizes a list of floats or integers, or single values with min-max normalization.
+For every element <a href="#normalize/3"><code class="inline">Arnold.Utilities.normalize/3</code></a> is called.</p><h2 id="normalize/3-example" class="section-heading">
+  <a href="#normalize/3-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="9233543459-1">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="9233543459-1">)</span><span class="w">
+</span><span class="p" data-group-id="9233543459-2">{</span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9233543459-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="truncate/2">
+
+  <div class="detail-header">
+    <a href="#truncate/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">truncate(inputs, threshold)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> truncate(<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()</pre>
+
+      </div>
+
+<p>Truncates a given list to the given length</p><h2 id="truncate/2-example" class="section-heading">
+  <a href="#truncate/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">truncate</span><span class="p" data-group-id="2422158551-1">(</span><span class="p" data-group-id="2422158551-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="2422158551-2">]</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="2422158551-1">)</span><span class="w">
+</span><span class="p" data-group-id="2422158551-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="2422158551-3">]</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show/lib/utilities/utils.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

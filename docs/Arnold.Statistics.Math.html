@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="Arnold v0.6.2">
+
+    <title>Arnold.Statistics.Math — Arnold v0.6.2</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-bc1991841a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="Arnold.html">
+        <img src="assets/logo.png" alt="Arnold" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="Arnold.html" class="sidebar-projectName" translate="no">
+Arnold
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.6.2
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Arnold.Statistics.Math</span> 
+  <small class="app-vsn" translate="no">(Arnold v0.6.2)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Collection of commonly used mathematical/statistic functions.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#devsq/1" translate="no">devsq(x)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Calculates the sum of the squared deviations from the mean, without dividing by N or by N-1.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#differencing/3" translate="no">differencing(x, d, window \\ 2)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#percentage/2" translate="no">percentage(x, y)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Calculates the percentage between 0 and 1 of <code class="inline">x</code> and <code class="inline">y</code>. Always the smaller number is divided by the larger.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sma/2" translate="no">sma(input, window)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Simple Moving Average algorithm</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#std/2" translate="no">std(x, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Function for calculating the standard deviation of the given set of numbers.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#variance/1" translate="no">variance(x)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Estimates the variance of a sample of data.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="devsq/1">
+
+  <div class="detail-header">
+    <a href="#devsq/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">devsq(x)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> devsq(x :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>()) :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>()</pre>
+
+      </div>
+
+<p>Calculates the sum of the squared deviations from the mean, without dividing by N or by N-1.</p><h2 id="devsq/1-example" class="section-heading">
+  <a href="#devsq/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="6527035499-1">(</span><span class="p" data-group-id="6527035499-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="6527035499-2">]</span><span class="p" data-group-id="6527035499-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">devsq</span><span class="w">
+</span><span class="p" data-group-id="6527035499-3">#</span><span class="nc" data-group-id="6527035499-3">Nx.Tensor</span><span class="p" data-group-id="6527035499-3">&lt;</span><span class="w">
+  </span><span class="n">f32</span><span class="w">
+  </span><span class="mf">17.5</span><span class="w">
+</span><span class="p" data-group-id="6527035499-3">&gt;</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="differencing/3">
+
+    <span id="differencing/2"></span>
+
+  <div class="detail-header">
+    <a href="#differencing/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">differencing(x, d, window \\ 2)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="percentage/2">
+
+  <div class="detail-header">
+    <a href="#percentage/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">percentage(x, y)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> percentage(x :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>(), y :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()</pre>
+
+      </div>
+
+<p>Calculates the percentage between 0 and 1 of <code class="inline">x</code> and <code class="inline">y</code>. Always the smaller number is divided by the larger.</p><h2 id="percentage/2-example" class="section-heading">
+  <a href="#percentage/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">percentage</span><span class="p" data-group-id="2592544875-1">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="2592544875-1">)</span><span class="w">
+</span><span class="mf">0.8</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">percentage</span><span class="p" data-group-id="2592544875-2">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="2592544875-2">)</span><span class="w">
+</span><span class="mf">0.8</span><span class="w">
+</span><span class="gp unselectable">iex(3)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="sma/2">
+
+  <div class="detail-header">
+    <a href="#sma/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sma(input, window)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sma(x :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>(), window :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>()</pre>
+
+      </div>
+
+<p>Simple Moving Average algorithm</p><p>Calculation that is used to analyze data points by creating a series of averages of
+different subsets of the full data set.</p><h2 id="sma/2-example" class="section-heading">
+  <a href="#sma/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="5167202949-1">(</span><span class="p" data-group-id="5167202949-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="5167202949-2">]</span><span class="p" data-group-id="5167202949-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">sma</span><span class="p" data-group-id="5167202949-3">(</span><span class="mi">2</span><span class="p" data-group-id="5167202949-3">)</span><span class="w">
+</span><span class="p" data-group-id="5167202949-4">#</span><span class="nc" data-group-id="5167202949-4">Nx.Tensor</span><span class="p" data-group-id="5167202949-4">&lt;</span><span class="w">
+  </span><span class="n">f32</span><span class="p" data-group-id="5167202949-5">[</span><span class="mi">5</span><span class="p" data-group-id="5167202949-5">]</span><span class="w">
+  </span><span class="p" data-group-id="5167202949-6">[</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p" data-group-id="5167202949-6">]</span><span class="w">
+</span><span class="p" data-group-id="5167202949-4">&gt;</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="std/2">
+
+    <span id="std/1"></span>
+
+  <div class="detail-header">
+    <a href="#std/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">std(x, opts \\ [])</h1>
+
+
+      <span class="note">(since 0.6.0)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> std(x :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>(), opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>()) :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>()</pre>
+
+      </div>
+
+<p>Function for calculating the standard deviation of the given set of numbers.</p><h2 id="std/2-example" class="section-heading">
+  <a href="#std/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">std</span><span class="p" data-group-id="7711610205-1">(</span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="7711610205-2">(</span><span class="p" data-group-id="7711610205-3">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="7711610205-3">]</span><span class="p" data-group-id="7711610205-2">)</span><span class="p" data-group-id="7711610205-1">)</span><span class="w">
+</span><span class="p" data-group-id="7711610205-4">#</span><span class="nc" data-group-id="7711610205-4">Nx.Tensor</span><span class="p" data-group-id="7711610205-4">&lt;</span><span class="w">
+  </span><span class="n">f32</span><span class="w">
+  </span><span class="mf">2.114763021469116</span><span class="w">
+</span><span class="p" data-group-id="7711610205-4">&gt;</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="variance/1">
+
+  <div class="detail-header">
+    <a href="#variance/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">variance(x)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> variance(x :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>()) :: <a href="https://hexdocs.pm/nx/0.1.0/Nx.Tensor.html#t:t/0">Nx.Tensor.t</a>()</pre>
+
+      </div>
+
+<p>Estimates the variance of a sample of data.</p><p>The variance function is a measure of heteroscedasticity and plays a large role in many settings of statistical modelling</p><h2 id="variance/1-example" class="section-heading">
+  <a href="#variance/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="8546605306-1">(</span><span class="p" data-group-id="8546605306-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="8546605306-2">]</span><span class="p" data-group-id="8546605306-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">variance</span><span class="w">
+</span><span class="p" data-group-id="8546605306-3">#</span><span class="nc" data-group-id="8546605306-3">Nx.Tensor</span><span class="p" data-group-id="8546605306-3">&lt;</span><span class="w">
+  </span><span class="n">f32</span><span class="w">
+  </span><span class="mf">3.5</span><span class="w">
+</span><span class="p" data-group-id="8546605306-3">&gt;</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show/lib/statistics/math.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

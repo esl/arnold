@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="Arnold v0.6.2">
+
+    <title>Arnold.Database — Arnold v0.6.2</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-bc1991841a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="Arnold.html">
+        <img src="assets/logo.png" alt="Arnold" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="Arnold.html" class="sidebar-projectName" translate="no">
+Arnold
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.6.2
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Arnold.Database</span> 
+  <small class="app-vsn" translate="no">(Arnold v0.6.2)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API wrapper for Memento to store or fetch data from the database.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get/2" translate="no">get(table, uuid)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Fetches data from database. Needs a <code class="inline">table schema</code> and an <code class="inline">uuid</code> which is made from the combination
+of <code class="inline">node_name</code> and <code class="inline">sensor_id</code> with <a href="Arnold.Utilities.html#id/2"><code class="inline">Arnold.Utilities.id/2</code></a>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get/3" translate="no">get(schema, node_id, sensor_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Tries to fetch a specific node_id and sensor_id from a table. If not found returns all the currently saved data from the backend</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#insert/1" translate="no">insert(data)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Inserts the data to the specific table of the Postgres database. If it's there
+updates the value</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="get/2">
+
+  <div class="detail-header">
+    <a href="#get/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get(table, uuid)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get(schema :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">module</a>(), uuid :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()} | {:error, :not_found}</pre>
+
+      </div>
+
+<p>Fetches data from database. Needs a <code class="inline">table schema</code> and an <code class="inline">uuid</code> which is made from the combination
+of <code class="inline">node_name</code> and <code class="inline">sensor_id</code> with <a href="Arnold.Utilities.html#id/2"><code class="inline">Arnold.Utilities.id/2</code></a>.</p><h2 id="get/2-example" class="section-heading">
+  <a href="#get/2-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Database</span><span class="p" data-group-id="1366523124-1">(</span><span class="nc">Arnold.Database.Table.Sensor</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="p" data-group-id="1366523124-1">)</span><span class="w">
+</span><span class="p" data-group-id="1366523124-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1366523124-3">%</span><span class="nc" data-group-id="1366523124-3">Arnold.Database.Table.Sensor</span><span class="p" data-group-id="1366523124-3">{</span><span class="w">
+  </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">hourly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1366523124-4">[</span><span class="p" data-group-id="1366523124-5">{</span><span class="mi">1610986020</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="1366523124-5">}</span><span class="p" data-group-id="1366523124-4">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">daily</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1366523124-6">[</span><span class="p" data-group-id="1366523124-6">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">weekly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1366523124-7">[</span><span class="p" data-group-id="1366523124-7">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">predictions</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1366523124-8">%{</span><span class="ss">hourly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1366523124-9">[</span><span class="p" data-group-id="1366523124-10">[</span><span class="p" data-group-id="1366523124-10">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-11">[</span><span class="p" data-group-id="1366523124-11">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-12">[</span><span class="p" data-group-id="1366523124-12">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-13">[</span><span class="p" data-group-id="1366523124-13">]</span><span class="p" data-group-id="1366523124-9">]</span><span class="p">,</span><span class="w"> </span><span class="ss">daily</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1366523124-14">[</span><span class="p" data-group-id="1366523124-15">[</span><span class="p" data-group-id="1366523124-15">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-16">[</span><span class="p" data-group-id="1366523124-16">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-17">[</span><span class="p" data-group-id="1366523124-17">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-18">[</span><span class="p" data-group-id="1366523124-18">]</span><span class="p" data-group-id="1366523124-14">]</span><span class="p">,</span><span class="w"> </span><span class="ss">weekly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1366523124-19">[</span><span class="p" data-group-id="1366523124-20">[</span><span class="p" data-group-id="1366523124-20">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-21">[</span><span class="p" data-group-id="1366523124-21">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-22">[</span><span class="p" data-group-id="1366523124-22">]</span><span class="p">,</span><span class="p" data-group-id="1366523124-23">[</span><span class="p" data-group-id="1366523124-23">]</span><span class="p" data-group-id="1366523124-19">]</span><span class="p" data-group-id="1366523124-8">}</span><span class="w">
+</span><span class="p" data-group-id="1366523124-3">}</span><span class="p" data-group-id="1366523124-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="get/3">
+
+  <div class="detail-header">
+    <a href="#get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get(schema, node_id, sensor_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get(schema :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">module</a>(), node_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), sensor_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()} | {:error, :not_found}</pre>
+
+      </div>
+
+<p>Tries to fetch a specific node_id and sensor_id from a table. If not found returns all the currently saved data from the backend</p>
+  </section>
+</section>
+<section class="detail" id="insert/1">
+
+  <div class="detail-header">
+    <a href="#insert/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">insert(data)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> insert(data :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">list</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()) :: :ok</pre>
+
+      </div>
+
+<p>Inserts the data to the specific table of the Postgres database. If it's there
+updates the value</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show/lib/database/database.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

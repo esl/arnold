@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="Arnold v0.6.2">
+
+    <title>Arnold — Arnold v0.6.2</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-bc1991841a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="Arnold.html">
+        <img src="assets/logo.png" alt="Arnold" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="Arnold.html" class="sidebar-projectName" translate="no">
+Arnold
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.6.2
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Arnold</span> 
+  <small class="app-vsn" translate="no">(Arnold v0.6.2)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Arnold main API functions, which can be used to communicate with other nodes or applications.
+The REST Api utilizes these functions mainly.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#analyse/4" translate="no">analyse(node_id, sensor_id, tag, prediction)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Returns the correlation with each metric that was pushed for a node. If found positive or negative correlation
+for a threshold larger (or smaller) than 0.7 marks it as the metrics are correlating with each other.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#feed/4" translate="no">feed(node_id, sensor_id, time, value)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Feed data to the sensors. It is going to be marked for train if the threshold is reached for the
+current input category.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#predict/3" translate="no">predict(id, tag, horizon)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Predicts a value for a given <code class="inline">id</code> and <code class="inline">tag</code>. Check out the <code class="inline">:windows</code> to see the available <code class="inline">tag</code> values.
+There are two types of predictions: <code class="inline">simple</code> and <code class="inline">complex</code>. Complex uses the trained neural network, while
+the simple is only used when there aren't any networks for the current id. It uses SES algorithm for predictions.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#predict/4" translate="no">predict(node_id, sensor_id, tag, horizon)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Predicts a value for a given <code class="inline">node</code>, <code class="inline">sensor_id</code> and <code class="inline">tag</code>. Check out the <code class="inline">:windows</code> to see the available <code class="inline">tag</code> values.
+Calls for <code class="inline">predict/2</code>.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="analyse/4">
+
+  <div class="detail-header">
+    <a href="#analyse/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">analyse(node_id, sensor_id, tag, prediction)</h1>
+
+
+      <span class="note">(since 0.6.2)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> analyse(
+  node_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
+  sensor_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
+  tag :: <a href="Arnold.Sensor.html#t:tag/0">Arnold.Sensor.tag</a>(),
+  prediction :: <a href="Arnold.NeuralNetwork.html#t:prediction/0">Arnold.NeuralNetwork.prediction</a>()
+) :: {nil, nil} | {msg :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()}</pre>
+
+      </div>
+
+<p>Returns the correlation with each metric that was pushed for a node. If found positive or negative correlation
+for a threshold larger (or smaller) than 0.7 marks it as the metrics are correlating with each other.</p><h2 id="analyse/4-example" class="section-heading">
+  <a href="#analyse/4-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold</span><span class="o">.</span><span class="n">analyze</span><span class="p" data-group-id="9922716508-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9922716508-2">[</span><span class="p" data-group-id="9922716508-3">[</span><span class="mi">1642433780</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433840</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433900</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433960</span><span class="p">,</span><span class="mi">1642434020</span><span class="p" data-group-id="9922716508-3">]</span><span class="p">,</span><span class="w">
+                                                      </span><span class="p" data-group-id="9922716508-4">[</span><span class="mf">119027224.0</span><span class="p">,</span><span class="mf">119214032.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119363472.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119483024.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119578672.0</span><span class="p" data-group-id="9922716508-4">]</span><span class="p">,</span><span class="w">
+                                                      </span><span class="p" data-group-id="9922716508-5">[</span><span class="mf">107124496.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107292624.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107427120.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107534720.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.076208e8</span><span class="p" data-group-id="9922716508-5">]</span><span class="w">
+                                                      </span><span class="p" data-group-id="9922716508-6">[</span><span class="mf">130929952.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131135440.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131299824.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131431328.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131536544.0</span><span class="p" data-group-id="9922716508-6">]</span><span class="p" data-group-id="9922716508-2">]</span><span class="p" data-group-id="9922716508-1">)</span><span class="w">
+</span><span class="p" data-group-id="9922716508-7">{</span><span class="ss">:alarm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Current value is higher than the expected prediction range by X&quot;</span><span class="p" data-group-id="9922716508-7">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="feed/4">
+
+  <div class="detail-header">
+    <a href="#feed/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">feed(node_id, sensor_id, time, value)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> feed(
+  node_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
+  sensor_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
+  time :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>(),
+  value :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>()
+) :: :ok</pre>
+
+      </div>
+
+<p>Feed data to the sensors. It is going to be marked for train if the threshold is reached for the
+current input category.</p><h2 id="feed/4-example" class="section-heading">
+  <a href="#feed/4-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold</span><span class="o">.</span><span class="n">feed</span><span class="p" data-group-id="6806218438-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433780</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6806218438-1">)</span><span class="w">
+</span><span class="ss">:ok</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="predict/3">
+
+  <div class="detail-header">
+    <a href="#predict/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">predict(id, tag, horizon)</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> predict(id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(), tag :: <a href="Arnold.Sensor.html#t:tag/0">Arnold.Sensor.tag</a>(), horizon :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()) ::
+  {:ok, <a href="Arnold.NeuralNetwork.html#t:prediction/0">Arnold.NeuralNetwork.prediction</a>()}</pre>
+
+      </div>
+
+<p>Predicts a value for a given <code class="inline">id</code> and <code class="inline">tag</code>. Check out the <code class="inline">:windows</code> to see the available <code class="inline">tag</code> values.
+There are two types of predictions: <code class="inline">simple</code> and <code class="inline">complex</code>. Complex uses the trained neural network, while
+the simple is only used when there aren't any networks for the current id. It uses SES algorithm for predictions.</p><h2 id="predict/3-example" class="section-heading">
+  <a href="#predict/3-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold</span><span class="o">.</span><span class="n">predict</span><span class="p" data-group-id="9160066836-1">(</span><span class="s">&quot;node_sensor_uuid&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9160066836-1">)</span><span class="w">
+</span><span class="p" data-group-id="9160066836-2">{</span><span class="n">ok</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="9160066836-3">[</span><span class="p" data-group-id="9160066836-4">[</span><span class="mi">1642433780</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433840</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433900</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433960</span><span class="p">,</span><span class="mi">1642434020</span><span class="p" data-group-id="9160066836-4">]</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="9160066836-5">[</span><span class="mf">119027224.0</span><span class="p">,</span><span class="mf">119214032.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119363472.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119483024.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119578672.0</span><span class="p" data-group-id="9160066836-5">]</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="9160066836-6">[</span><span class="mf">107124496.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107292624.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107427120.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107534720.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.076208e8</span><span class="p" data-group-id="9160066836-6">]</span><span class="w">
+     </span><span class="p" data-group-id="9160066836-7">[</span><span class="mf">130929952.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131135440.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131299824.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131431328.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131536544.0</span><span class="p" data-group-id="9160066836-7">]</span><span class="p" data-group-id="9160066836-3">]</span><span class="p" data-group-id="9160066836-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="predict/4">
+
+  <div class="detail-header">
+    <a href="#predict/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">predict(node_id, sensor_id, tag, horizon)</h1>
+
+
+      <span class="note">(since 0.6.2)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> predict(
+  node_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
+  sensor_id :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
+  tag :: <a href="Arnold.Sensor.html#t:tag/0">Arnold.Sensor.tag</a>(),
+  horizon :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>()
+) :: {:ok, <a href="Arnold.NeuralNetwork.html#t:prediction/0">Arnold.NeuralNetwork.prediction</a>()}</pre>
+
+      </div>
+
+<p>Predicts a value for a given <code class="inline">node</code>, <code class="inline">sensor_id</code> and <code class="inline">tag</code>. Check out the <code class="inline">:windows</code> to see the available <code class="inline">tag</code> values.
+Calls for <code class="inline">predict/2</code>.</p><h2 id="predict/4-example" class="section-heading">
+  <a href="#predict/4-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold</span><span class="o">.</span><span class="n">predict</span><span class="p" data-group-id="7138331747-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="7138331747-1">)</span><span class="w">
+</span><span class="p" data-group-id="7138331747-2">{</span><span class="n">ok</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="7138331747-3">[</span><span class="p" data-group-id="7138331747-4">[</span><span class="mi">1642433780</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433840</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433900</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433960</span><span class="p">,</span><span class="mi">1642434020</span><span class="p" data-group-id="7138331747-4">]</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="7138331747-5">[</span><span class="mf">119027224.0</span><span class="p">,</span><span class="mf">119214032.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119363472.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119483024.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119578672.0</span><span class="p" data-group-id="7138331747-5">]</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="7138331747-6">[</span><span class="mf">107124496.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107292624.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107427120.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107534720.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.076208e8</span><span class="p" data-group-id="7138331747-6">]</span><span class="w">
+     </span><span class="p" data-group-id="7138331747-7">[</span><span class="mf">130929952.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131135440.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131299824.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131431328.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131536544.0</span><span class="p" data-group-id="7138331747-7">]</span><span class="p" data-group-id="7138331747-3">]</span><span class="p" data-group-id="7138331747-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show/lib/arnold.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
