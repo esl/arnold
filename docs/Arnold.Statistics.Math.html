@@ -222,11 +222,11 @@ Functions
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="6527035499-1">(</span><span class="p" data-group-id="6527035499-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="6527035499-2">]</span><span class="p" data-group-id="6527035499-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">devsq</span><span class="w">
-</span><span class="p" data-group-id="6527035499-3">#</span><span class="nc" data-group-id="6527035499-3">Nx.Tensor</span><span class="p" data-group-id="6527035499-3">&lt;</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="5784397488-1">(</span><span class="p" data-group-id="5784397488-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="5784397488-2">]</span><span class="p" data-group-id="5784397488-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">devsq</span><span class="w">
+</span><span class="p" data-group-id="5784397488-3">#</span><span class="nc" data-group-id="5784397488-3">Nx.Tensor</span><span class="p" data-group-id="5784397488-3">&lt;</span><span class="w">
   </span><span class="n">f32</span><span class="w">
   </span><span class="mf">17.5</span><span class="w">
-</span><span class="p" data-group-id="6527035499-3">&gt;</span><span class="w">
+</span><span class="p" data-group-id="5784397488-3">&gt;</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -277,9 +277,9 @@ Functions
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">percentage</span><span class="p" data-group-id="2592544875-1">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="2592544875-1">)</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">percentage</span><span class="p" data-group-id="2770895030-1">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="2770895030-1">)</span><span class="w">
 </span><span class="mf">0.8</span><span class="w">
-</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">percentage</span><span class="p" data-group-id="2592544875-2">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="2592544875-2">)</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">percentage</span><span class="p" data-group-id="2770895030-2">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="2770895030-2">)</span><span class="w">
 </span><span class="mf">0.8</span><span class="w">
 </span><span class="gp unselectable">iex(3)&gt;</span></code></pre>
   </section>
@@ -313,11 +313,11 @@ different subsets of the full data set.</p><h2 id="sma/2-example" class="section
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="5167202949-1">(</span><span class="p" data-group-id="5167202949-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="5167202949-2">]</span><span class="p" data-group-id="5167202949-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">sma</span><span class="p" data-group-id="5167202949-3">(</span><span class="mi">2</span><span class="p" data-group-id="5167202949-3">)</span><span class="w">
-</span><span class="p" data-group-id="5167202949-4">#</span><span class="nc" data-group-id="5167202949-4">Nx.Tensor</span><span class="p" data-group-id="5167202949-4">&lt;</span><span class="w">
-  </span><span class="n">f32</span><span class="p" data-group-id="5167202949-5">[</span><span class="mi">5</span><span class="p" data-group-id="5167202949-5">]</span><span class="w">
-  </span><span class="p" data-group-id="5167202949-6">[</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p" data-group-id="5167202949-6">]</span><span class="w">
-</span><span class="p" data-group-id="5167202949-4">&gt;</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="4140115794-1">(</span><span class="p" data-group-id="4140115794-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="4140115794-2">]</span><span class="p" data-group-id="4140115794-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">sma</span><span class="p" data-group-id="4140115794-3">(</span><span class="mi">2</span><span class="p" data-group-id="4140115794-3">)</span><span class="w">
+</span><span class="p" data-group-id="4140115794-4">#</span><span class="nc" data-group-id="4140115794-4">Nx.Tensor</span><span class="p" data-group-id="4140115794-4">&lt;</span><span class="w">
+  </span><span class="n">f32</span><span class="p" data-group-id="4140115794-5">[</span><span class="mi">5</span><span class="p" data-group-id="4140115794-5">]</span><span class="w">
+  </span><span class="p" data-group-id="4140115794-6">[</span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w"> </span><span class="mf">5.5</span><span class="p" data-group-id="4140115794-6">]</span><span class="w">
+</span><span class="p" data-group-id="4140115794-4">&gt;</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -351,11 +351,11 @@ different subsets of the full data set.</p><h2 id="sma/2-example" class="section
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">std</span><span class="p" data-group-id="7711610205-1">(</span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="7711610205-2">(</span><span class="p" data-group-id="7711610205-3">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="7711610205-3">]</span><span class="p" data-group-id="7711610205-2">)</span><span class="p" data-group-id="7711610205-1">)</span><span class="w">
-</span><span class="p" data-group-id="7711610205-4">#</span><span class="nc" data-group-id="7711610205-4">Nx.Tensor</span><span class="p" data-group-id="7711610205-4">&lt;</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">std</span><span class="p" data-group-id="3061966400-1">(</span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="3061966400-2">(</span><span class="p" data-group-id="3061966400-3">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3061966400-3">]</span><span class="p" data-group-id="3061966400-2">)</span><span class="p" data-group-id="3061966400-1">)</span><span class="w">
+</span><span class="p" data-group-id="3061966400-4">#</span><span class="nc" data-group-id="3061966400-4">Nx.Tensor</span><span class="p" data-group-id="3061966400-4">&lt;</span><span class="w">
   </span><span class="n">f32</span><span class="w">
   </span><span class="mf">2.114763021469116</span><span class="w">
-</span><span class="p" data-group-id="7711610205-4">&gt;</span><span class="w">
+</span><span class="p" data-group-id="3061966400-4">&gt;</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -387,11 +387,11 @@ different subsets of the full data set.</p><h2 id="sma/2-example" class="section
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="8546605306-1">(</span><span class="p" data-group-id="8546605306-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="8546605306-2">]</span><span class="p" data-group-id="8546605306-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">variance</span><span class="w">
-</span><span class="p" data-group-id="8546605306-3">#</span><span class="nc" data-group-id="8546605306-3">Nx.Tensor</span><span class="p" data-group-id="8546605306-3">&lt;</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="1930698282-1">(</span><span class="p" data-group-id="1930698282-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="1930698282-2">]</span><span class="p" data-group-id="1930698282-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.Math</span><span class="o">.</span><span class="n">variance</span><span class="w">
+</span><span class="p" data-group-id="1930698282-3">#</span><span class="nc" data-group-id="1930698282-3">Nx.Tensor</span><span class="p" data-group-id="1930698282-3">&lt;</span><span class="w">
   </span><span class="n">f32</span><span class="w">
   </span><span class="mf">3.5</span><span class="w">
-</span><span class="p" data-group-id="8546605306-3">&gt;</span><span class="w">
+</span><span class="p" data-group-id="1930698282-3">&gt;</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -408,7 +408,7 @@ different subsets of the full data set.</p><h2 id="sma/2-example" class="section
               <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
               <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
 
-                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show/lib/statistics/math.ex">(current file)</a>
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show//Users/lengyeltamas/Projects/ESL/Arnold/lib/statistics/math.ex">(current file)</a>
 
             </span>
 

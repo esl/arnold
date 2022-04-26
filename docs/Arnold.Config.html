@@ -187,8 +187,8 @@ The following default configs are configured for Arnold:</p><h2 id="get/1-exampl
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="5673511751-1">(</span><span class="ss">:port</span><span class="p" data-group-id="5673511751-1">)</span><span class="w">
-</span><span class="p" data-group-id="5673511751-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">8081</span><span class="p" data-group-id="5673511751-2">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="1753809845-1">(</span><span class="ss">:port</span><span class="p" data-group-id="1753809845-1">)</span><span class="w">
+</span><span class="p" data-group-id="1753809845-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">8081</span><span class="p" data-group-id="1753809845-2">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre><p>The windows and ports are hard coded with the following default values:</p><pre><code class="makeup elixir" translate="no"><span class="ss">:hourly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="w">
 </span><span class="ss">:daily</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">96</span><span class="w">
 </span><span class="ss">:weekly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">168</span><span class="w">
@@ -199,8 +199,8 @@ variable.</p><h2 id="get/1-example-1" class="section-heading">
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="1892952697-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="1892952697-1">)</span><span class="w">
-</span><span class="p" data-group-id="1892952697-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="1892952697-2">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="5984224743-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="5984224743-1">)</span><span class="w">
+</span><span class="p" data-group-id="5984224743-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="5984224743-2">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -233,8 +233,8 @@ The following types are accepted:</p><ul><li><code class="inline">:hourly</code>
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="2727890255-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="2727890255-1">)</span><span class="w">
-</span><span class="p" data-group-id="2727890255-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="2727890255-2">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="0399358630-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="0399358630-1">)</span><span class="w">
+</span><span class="p" data-group-id="0399358630-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="0399358630-2">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -251,7 +251,7 @@ The following types are accepted:</p><ul><li><code class="inline">:hourly</code>
               <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
               <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
 
-                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show/lib/utilities/config.ex">(current file)</a>
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show//Users/lengyeltamas/Projects/ESL/Arnold/lib/utilities/config.ex">(current file)</a>
 
             </span>
 
