@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="Arnold v0.6.2">
+
+    <title>Arnold.NeuralNetwork — Arnold v0.6.2</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-bc1991841a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="Arnold.html">
+        <img src="assets/logo.png" alt="Arnold" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="Arnold.html" class="sidebar-projectName" translate="no">
+Arnold
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.6.2
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Arnold.NeuralNetwork</span> 
+  <small class="app-vsn" translate="no">(Arnold v0.6.2)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>The neural network API that contains function for training and prediction.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:prediction/0" translate="no">prediction()</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Prediction result. A 4 element list of list of integers.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:prediction_method/0" translate="no">prediction_method()</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Prediction method type that can be set as the third argument of <a href="#predict/4"><code class="inline">Arnold.NeuralNetwork.predict/4</code></a></p></div>
+
+      </div>
+
+  </div>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#predict/4" translate="no">predict(sensor, tag, horizon, method)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Predict a value or a list of values or a single value based on the method which can be <code class="inline">:complex</code> or <code class="inline">:simple</code>.
+Simple type utilizes the Single Exponential Smoothing algorithm from <code class="inline">Arnold.Analyser.ExponentialSmoothing.simple/1</code>, which is only good for predicting one value ahead.
+Complex uses neural network while also affects the results by trend and seasonality.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#save/1" translate="no">save(neural_network_data)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Saves the given result from the <a href="#train/1"><code class="inline">Arnold.NeuralNetwork.train/1</code></a> function.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#train/1" translate="no">train(sensor)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Trains the neural network with the given <code class="inline">sensor</code> and <code class="inline">tag</code>, until a configure <code class="inline">eps</code> value is not reached.
+If it fails to reach the given epsilon value, the training stops when exceeding the <code class="inline">:max_iterates</code> config value.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:prediction/0">
+
+  <div class="detail-header">
+    <a href="#t:prediction/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">prediction()</h1>
+
+
+      <span class="note">(since 0.6.2)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> prediction() :: [[<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()]]</pre>
+
+      </div>
+
+<p>Prediction result. A 4 element list of list of integers.</p><ol><li>List of timestamps</li><li>List of predictions</li><li>List of upper range predictions</li><li>List of lower range predictions</li></ol><pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="6235248344-1">[</span><span class="p" data-group-id="6235248344-2">[</span><span class="p" data-group-id="6235248344-2">]</span><span class="p">,</span><span class="p" data-group-id="6235248344-3">[</span><span class="p" data-group-id="6235248344-3">]</span><span class="p">,</span><span class="p" data-group-id="6235248344-4">[</span><span class="p" data-group-id="6235248344-4">]</span><span class="p">,</span><span class="p" data-group-id="6235248344-5">[</span><span class="p" data-group-id="6235248344-5">]</span><span class="p">,</span><span class="p" data-group-id="6235248344-6">[</span><span class="p" data-group-id="6235248344-6">]</span><span class="p" data-group-id="6235248344-1">]</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="t:prediction_method/0">
+
+  <div class="detail-header">
+    <a href="#t:prediction_method/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">prediction_method()</h1>
+
+
+      <span class="note">(since 0.5.4)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> prediction_method() :: :simple | :complex</pre>
+
+      </div>
+
+<p>Prediction method type that can be set as the third argument of <a href="#predict/4"><code class="inline">Arnold.NeuralNetwork.predict/4</code></a></p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="predict/4">
+
+  <div class="detail-header">
+    <a href="#predict/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">predict(sensor, tag, horizon, method)</h1>
+
+
+      <span class="note">(since 0.6.2)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> predict(
+  sensor :: <a href="Arnold.Database.Table.Sensor.html#t:t/0">Arnold.Database.Table.Sensor.t</a>() | nil,
+  tag :: <a href="Arnold.Sensor.html#t:tag/0">Arnold.Sensor.tag</a>(),
+  horizon :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pos_integer</a>(),
+  type :: <a href="#t:prediction_method/0">prediction_method</a>()
+) :: {:ok, prediction :: <a href="#t:prediction/0">prediction</a>()}</pre>
+
+      </div>
+
+<p>Predict a value or a list of values or a single value based on the method which can be <code class="inline">:complex</code> or <code class="inline">:simple</code>.
+Simple type utilizes the Single Exponential Smoothing algorithm from <code class="inline">Arnold.Analyser.ExponentialSmoothing.simple/1</code>, which is only good for predicting one value ahead.
+Complex uses neural network while also affects the results by trend and seasonality.</p><p>If the sensor is <code class="inline">nil</code> it returns <code class="inline">nil</code>.</p><h2 id="predict/4-example" class="section-heading">
+  <a href="#predict/4-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.NeuralNetwork</span><span class="o">.</span><span class="n">predict</span><span class="p" data-group-id="5776067357-1">(</span><span class="p" data-group-id="5776067357-2">%</span><span class="nc" data-group-id="5776067357-2">Arnold.Database.Table.Sensor</span><span class="p" data-group-id="5776067357-2">{</span><span class="w">
+</span><span class="gp unselectable">...(1)&gt; </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="p">,</span><span class="w">
+</span><span class="gp unselectable">...(1)&gt; </span><span class="ss">hourly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5776067357-3">[</span><span class="p" data-group-id="5776067357-4">{</span><span class="mi">1642594108</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="5776067357-4">}</span><span class="p" data-group-id="5776067357-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">daily</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5776067357-5">[</span><span class="p" data-group-id="5776067357-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">weekly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5776067357-6">[</span><span class="p" data-group-id="5776067357-6">]</span><span class="p" data-group-id="5776067357-2">}</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">:simple</span><span class="p" data-group-id="5776067357-1">)</span><span class="w">
+</span><span class="p" data-group-id="5776067357-7">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5776067357-8">[</span><span class="p" data-group-id="5776067357-9">[</span><span class="mi">1642594108</span><span class="p" data-group-id="5776067357-9">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5776067357-10">[</span><span class="mi">4</span><span class="p" data-group-id="5776067357-10">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5776067357-11">[</span><span class="mf">4.8</span><span class="p" data-group-id="5776067357-11">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5776067357-12">[</span><span class="mf">3.2</span><span class="p" data-group-id="5776067357-12">]</span><span class="p" data-group-id="5776067357-8">]</span><span class="p" data-group-id="5776067357-7">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="save/1">
+
+  <div class="detail-header">
+    <a href="#save/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">save(neural_network_data)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> save(<a href="Arnold.Database.Table.NetworkModel.html#t:t/0">Arnold.Database.Table.NetworkModel.t</a>()) :: :ok</pre>
+
+      </div>
+
+<p>Saves the given result from the <a href="#train/1"><code class="inline">Arnold.NeuralNetwork.train/1</code></a> function.</p>
+  </section>
+</section>
+<section class="detail" id="train/1">
+
+  <div class="detail-header">
+    <a href="#train/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">train(sensor)</h1>
+
+
+      <span class="note">(since 0.6.0)</span>
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> train(sensor :: <a href="Arnold.Database.Table.Sensor.html#t:t/0">Arnold.Database.Table.Sensor.t</a>()) ::
+  <a href="Arnold.Database.Table.NetworkModel.html#t:t/0">Arnold.Database.Table.NetworkModel.t</a>()</pre>
+
+      </div>
+
+<p>Trains the neural network with the given <code class="inline">sensor</code> and <code class="inline">tag</code>, until a configure <code class="inline">eps</code> value is not reached.
+If it fails to reach the given epsilon value, the training stops when exceeding the <code class="inline">:max_iterates</code> config value.</p><h2 id="train/1-example" class="section-heading">
+  <a href="#train/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">example</p>
+  </a>
+  Example
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.NeuralNetwork</span><span class="o">.</span><span class="n">train</span><span class="p" data-group-id="5460841844-1">(</span><span class="p" data-group-id="5460841844-2">%</span><span class="nc" data-group-id="5460841844-2">Arnold.Database.Table.Sensor</span><span class="p" data-group-id="5460841844-2">{</span><span class="w">
+</span><span class="gp unselectable">...(1)&gt; </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="p">,</span><span class="w">
+</span><span class="gp unselectable">...(1)&gt; </span><span class="ss">hourly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5460841844-3">[</span><span class="p" data-group-id="5460841844-4">{</span><span class="mi">1642593268</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="5460841844-4">}</span><span class="p">,</span><span class="p" data-group-id="5460841844-5">{</span><span class="mi">1642593208</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="5460841844-5">}</span><span class="p">,</span><span class="p" data-group-id="5460841844-6">{</span><span class="mi">1642593148</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="5460841844-6">}</span><span class="p">,</span><span class="p" data-group-id="5460841844-7">{</span><span class="mi">1642593088</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="5460841844-7">}</span><span class="p">,</span><span class="p" data-group-id="5460841844-8">{</span><span class="mi">1642593028</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="5460841844-8">}</span><span class="n">...</span><span class="p" data-group-id="5460841844-3">]</span><span class="p">,</span><span class="w">
+</span><span class="gp unselectable">...(1)&gt; </span><span class="ss">daily</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5460841844-9">[</span><span class="p" data-group-id="5460841844-10">{</span><span class="mi">1642594108</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="5460841844-10">}</span><span class="p">,</span><span class="p" data-group-id="5460841844-11">{</span><span class="mi">1642593808</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p" data-group-id="5460841844-11">}</span><span class="p">,</span><span class="p" data-group-id="5460841844-12">{</span><span class="mi">1642593508</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="5460841844-12">}</span><span class="p">,</span><span class="p" data-group-id="5460841844-13">{</span><span class="mi">1642593208</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="5460841844-13">}</span><span class="p" data-group-id="5460841844-9">]</span><span class="p">,</span><span class="w"> </span><span class="ss">weekly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5460841844-14">[</span><span class="p" data-group-id="5460841844-14">]</span><span class="p" data-group-id="5460841844-2">}</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="5460841844-1">)</span><span class="w">
+</span><span class="p" data-group-id="5460841844-15">%</span><span class="nc" data-group-id="5460841844-15">Arnold.Database.Table.NetworkModel</span><span class="p" data-group-id="5460841844-15">{</span><span class="p" data-group-id="5460841844-15">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show//Users/lengyeltamas/Projects/ESL/Arnold/lib/neural_network/neural_network.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

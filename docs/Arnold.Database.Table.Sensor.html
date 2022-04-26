@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="Arnold v0.6.2">
+
+    <title>Arnold.Database.Table.Sensor — Arnold v0.6.2</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-bc1991841a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="Arnold.html">
+        <img src="assets/logo.png" alt="Arnold" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="Arnold.html" class="sidebar-projectName" translate="no">
+Arnold
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.6.2
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Arnold.Database.Table.Sensor</span> 
+  <small class="app-vsn" translate="no">(Arnold v0.6.2)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Memento table for sensors.</p><h2 id="module-structure" class="section-heading">
+  <a href="#module-structure" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">structure</p>
+  </a>
+  Structure
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="9514477849-1">%</span><span class="nc" data-group-id="9514477849-1">Arnold.Database.Table.Sensor</span><span class="p" data-group-id="9514477849-1">{</span><span class="w">
+  </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">hourly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9514477849-2">[</span><span class="p" data-group-id="9514477849-2">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">daily</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9514477849-3">[</span><span class="p" data-group-id="9514477849-3">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">weekly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9514477849-4">[</span><span class="p" data-group-id="9514477849-4">]</span><span class="p">,</span><span class="w">
+  </span><span class="ss">predictions</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9514477849-5">%{</span><span class="ss">hourly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9514477849-6">[</span><span class="p" data-group-id="9514477849-7">[</span><span class="p" data-group-id="9514477849-7">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-8">[</span><span class="p" data-group-id="9514477849-8">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-9">[</span><span class="p" data-group-id="9514477849-9">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-10">[</span><span class="p" data-group-id="9514477849-10">]</span><span class="p" data-group-id="9514477849-6">]</span><span class="p">,</span><span class="w"> </span><span class="ss">daily</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9514477849-11">[</span><span class="p" data-group-id="9514477849-12">[</span><span class="p" data-group-id="9514477849-12">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-13">[</span><span class="p" data-group-id="9514477849-13">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-14">[</span><span class="p" data-group-id="9514477849-14">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-15">[</span><span class="p" data-group-id="9514477849-15">]</span><span class="p" data-group-id="9514477849-11">]</span><span class="p">,</span><span class="w"> </span><span class="ss">weekly</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9514477849-16">[</span><span class="p" data-group-id="9514477849-17">[</span><span class="p" data-group-id="9514477849-17">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-18">[</span><span class="p" data-group-id="9514477849-18">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-19">[</span><span class="p" data-group-id="9514477849-19">]</span><span class="p">,</span><span class="p" data-group-id="9514477849-20">[</span><span class="p" data-group-id="9514477849-20">]</span><span class="p" data-group-id="9514477849-16">]</span><span class="p" data-group-id="9514477849-5">}</span><span class="w">
+</span><span class="p" data-group-id="9514477849-1">}</span></code></pre><h2 id="module-attributes" class="section-heading">
+  <a href="#module-attributes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">attributes</p>
+  </a>
+  Attributes
+</h2>
+<ul><li><code class="inline">id</code>: table id, equal to sensor id</li><li><code class="inline">hourly</code>: Hourly list of inputs, with timestamps (received every minute)</li><li><code class="inline">daily</code>: Daily list of inputs, with timestamps (received every 5 minute)</li><li><code class="inline">weekly</code>: Weekly list of inputs, with timestamps (received every 15 minute)</li><li><code class="inline">predictions</code>: Map of predictions per tag.</li></ul>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+
+        </div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:t/0">
+
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> t() :: %Arnold.Database.Table.Sensor{
+  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
+  daily: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">tuple</a>()],
+  hourly: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">tuple</a>()],
+  id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
+  predictions: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
+  weekly: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">tuple</a>()]
+}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show//Users/lengyeltamas/Projects/ESL/Arnold/lib/database/tables/sensor.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

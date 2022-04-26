@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="Arnold v0.6.2">
+
+    <title>README — Arnold v0.6.2</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-bc1991841a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="extras">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+      <a href="Arnold.html">
+        <img src="assets/logo.png" alt="Arnold" class="sidebar-projectImage">
+      </a>
+
+    <div class="sidebar-projectDetails">
+      <a href="Arnold.html" class="sidebar-projectName" translate="no">
+Arnold
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.6.2
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span>README</span>
+</h1>
+
+<p align="center">  <img src="assets/logo.png" /></p><p align="center">  <b>Neural Network for time series data forecasting using Axon library</b></p><p align="center">  <a href="./LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/license-MIT-blue" />
+  </a></p><h2 id="features" class="section-heading">
+  <a href="#features" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">features</p>
+  </a>
+  Features
+</h2>
+<ul><li>Lightweight REST API</li><li>Automatic training after reaching certain threshold</li><li>Load Balancing</li><li>Analyser tools</li><li>Simple &amp; Complex predictions</li></ul><p>Arnold is a neural network built as an analysing and forecasting tool for time series data.
+Used by <a href="https://www.erlang-solutions.com/capabilities/wombatoam/">WombatOAM</a>.
+The goal was to integrate a tool that can analyse the incoming metrics and forecast upcoming values, alert users when
+a monitored metric reaches a certain threshold, dynamic alerts, and much more.</p><p>Arnold is capable of returning the trend and seasonality components, which are calculated with
+a decomposition method, then added back to the final prediction result.</p><p>Documentation is available <a href="https://esl.github.io/arnold/">here</a></p><h1>Installation &amp; Usage</h1><h2 id="packages" class="section-heading">
+  <a href="#packages" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">packages</p>
+  </a>
+  Packages
+</h2>
+<p>Arnold has package releases for both osx and linux. Download the favored version from github packages page.
+Uncompress it with <code class="inline">tar</code> like the following way:</p><pre><code class="makeup bash" translate="no"><span class="">foo@bar:~$ tar -xf arnold-{VERSION}-{OS}.tar.gz
+</span></code></pre><p>Then can be started like</p><pre><code class="makeup bash" translate="no"><span class="">foo@bar:~$ arnold-{VERSION}-{OS}/bin/arnold start
+</span></code></pre><h2 id="build-from-source" class="section-heading">
+  <a href="#build-from-source" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">build-from-source</p>
+  </a>
+  Build from source
+</h2>
+<h3 id="prerequisites" class="section-heading">
+  <a href="#prerequisites" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">prerequisites</p>
+  </a>
+  Prerequisites
+</h3>
+<p>Arnold requires <strong>Elixir 1.13</strong> or later version and <strong>Erlang/OTP 24.0</strong> or later version.</p><h3 id="build" class="section-heading">
+  <a href="#build" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">build</p>
+  </a>
+  Build
+</h3>
+<p>Clone the repository to your custom destination.</p><pre><code class="makeup bash" translate="no"><span class="">foo@bar:~$ git clone https://github.com/esl/arnold.git
+</span></code></pre><p>Run the following command to get a dependencies and build Arnold</p><pre><code class="makeup bash" translate="no"><span class="">foo@bar:~$ make build
+</span></code></pre><p>Recommened way of start a Arnold node is the interactive mode with the shell using</p><pre><code class="makeup bash" translate="no"><span class="">foo@bar:~$ make console
+</span></code></pre><p>If you would like to create a release version of Arnold <code class="inline">TARGET</code> varibale should be set before
+running <code class="inline">distillery</code>.</p><pre><code class="makeup bash" translate="no"><span class="">foo@bar:~$ make release TARGET=osx
+</span></code></pre><p>If not set it is going to use the default <code class="inline">dev</code> environment. All configurations can be checked
+in the <code class="inline">rel/config.exs</code></p><h2 id="basic-usage" class="section-heading">
+  <a href="#basic-usage" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">basic-usage</p>
+  </a>
+  Basic Usage
+</h2>
+<p>For most cases there are two possible optios to use</p><ul><li>RestAPI</li><li>Arnold module</li></ul><h3 id="feeding-data" class="section-heading">
+  <a href="#feeding-data" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">feeding-data</p>
+  </a>
+  Feeding data
+</h3>
+<h4>RestAPI url</h4><pre><code class="makeup elixir" translate="no"><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">write?</span><span class="n">node</span><span class="o">=</span><span class="nc">NodeID</span><span class="o">&amp;</span><span class="n">metric</span><span class="o">=</span><span class="nc">MetricName</span></code></pre><p>It has two query parameters </p><ul><li>NodeID: Node name</li><li>MetricName: Name of the metric which is going to appear in Arnold as SensorID</li></ul><p> Body is sent as a json object.</p><pre><code class="json"> {
+   &quot;type&quot;: &quot;gauge&quot;,
+   &quot;value&quot;: 5,
+   &quot;timestamp&quot;: 1642433780
+ }</code></pre><ul><li>Type: Metric type like gauge, counter etc. Arnold has its own way of dealing with metrics. It can be extended with multiple types as well.</li><li>Value: Single numeric value (could be a float)</li><li>Timestamp: time when the metric value was created</li></ul><h4>Arnold module</h4><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold</span><span class="o">.</span><span class="n">feed</span><span class="p" data-group-id="7709659843-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433780</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="7709659843-1">)</span><span class="w">
+</span><span class="ss">:ok</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre><h3 id="retriving-predictions" class="section-heading">
+  <a href="#retriving-predictions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">retriving-predictions</p>
+  </a>
+  Retriving predictions
+</h3>
+<h4>RestAPI url</h4><pre><code class="makeup elixir" translate="no"><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">prediction?</span><span class="n">node</span><span class="o">=</span><span class="nc">NodeID</span><span class="o">&amp;</span><span class="n">metric</span><span class="o">=</span><span class="nc">MetricName</span><span class="o">&amp;</span><span class="n">tag</span><span class="o">=</span><span class="nc">Tag</span><span class="o">&amp;</span><span class="n">horizon</span><span class="o">=</span><span class="nc">Horizon</span></code></pre><p>It has two query parameters </p><ul><li>NodeID: Node name</li><li>MetricName: Name of the metric which is going to appear in Arnold as SensorID</li><li>Tag: Time period tag (hourly, daily, weekly)</li><li>Horizon: Forecast horizon, quantity of metrics to be forecasted after of the latest timestamp.</li></ul><p> Body is empty.</p><h4>Arnold module</h4><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold</span><span class="o">.</span><span class="n">predict</span><span class="p" data-group-id="4689230142-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor_id&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="4689230142-1">)</span><span class="w">
+  </span><span class="p" data-group-id="4689230142-2">{</span><span class="n">ok</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="4689230142-3">[</span><span class="p" data-group-id="4689230142-4">[</span><span class="mi">1642433780</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433840</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433900</span><span class="p">,</span><span class="w"> </span><span class="mi">1642433960</span><span class="p">,</span><span class="mi">1642434020</span><span class="p" data-group-id="4689230142-4">]</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="4689230142-5">[</span><span class="mf">119027224.0</span><span class="p">,</span><span class="mf">119214032.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119363472.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119483024.0</span><span class="p">,</span><span class="w"> </span><span class="mf">119578672.0</span><span class="p" data-group-id="4689230142-5">]</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="4689230142-6">[</span><span class="mf">107124496.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107292624.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107427120.0</span><span class="p">,</span><span class="w"> </span><span class="mf">107534720.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.076208e8</span><span class="p" data-group-id="4689230142-6">]</span><span class="w">
+       </span><span class="p" data-group-id="4689230142-7">[</span><span class="mf">130929952.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131135440.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131299824.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131431328.0</span><span class="p">,</span><span class="w"> </span><span class="mf">131536544.0</span><span class="p" data-group-id="4689230142-7">]</span><span class="p" data-group-id="4689230142-3">]</span><span class="p" data-group-id="4689230142-2">}</span><span class="w">
+</span><span class="gp unselectable">iex(2)&gt;</span></code></pre><p>Returning data is <a href="https://www.highcharts.com/">Highcharts</a> friendly for easier use.</p><h2 id="makefile-commands" class="section-heading">
+  <a href="#makefile-commands" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">makefile-commands</p>
+  </a>
+  Makefile commands
+</h2>
+<ul><li><code class="inline">compile</code>: Compiles Arnold</li><li><code class="inline">deps</code>: Gets the deps</li><li><code class="inline">build</code>: Previos two commands together. Needs a clean repo.</li><li><code class="inline">release</code>: Creates a release. If <code class="inline">TARGET</code> is defined it uses the given values as a mix environment.</li><li><code class="inline">console</code>: Starts a dev console</li><li><code class="inline">docs</code>: Makes the docs using ExDoc</li><li><code class="inline">dialyzer</code>: Runs dialyzer</li><li><code class="inline">clean</code>: Cleans the folder like it was just cloned</li></ul><h3 id="useage" class="section-heading">
+  <a href="#useage" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">useage</p>
+  </a>
+  Useage
+</h3>
+<pre><code class="makeup bash" translate="no"><span class="">foo@bar:~$ make COMMAND
+</span></code></pre><h2 id="config" class="section-heading">
+  <a href="#config" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">config</p>
+  </a>
+  Config
+</h2>
+<p>By default the port <code class="inline">8081</code> is used for the RestAPI but can be configure for a custom port number.</p><pre><code class="makeup elixir" translate="no"><span class="n">config</span><span class="w"> </span><span class="ss">:arnold</span><span class="p">,</span><span class="w"> </span><span class="ss">port</span><span class="p">:</span><span class="w"> </span><span class="mi">8081</span></code></pre><h2 id="dependencies" class="section-heading">
+  <a href="#dependencies" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">dependencies</p>
+  </a>
+  Dependencies
+</h2>
+<ul><li><strong>Axon</strong>: Neural Network</li><li><strong>Nx</strong>: Tensor</li><li><strong>Memento</strong>: Mnesia storage backend API</li><li><strong>Plug_cowboy</strong>: RestAPI</li><li><strong>Logger_file_backend</strong>: Logging to file </li><li><strong>Uuid</strong>: ID generation</li><li><strong>Distillery</strong>: Release and package creation</li><li><strong>Dialyxir</strong>: dev only, dialyzer</li><li><strong>ExDocs</strong>: dev only, Documentation of the project</li></ul><h2 id="license" class="section-heading">
+  <a href="#license" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">license</p>
+  </a>
+  License
+</h2>
+<p>MIT</p>
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="api-reference.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+API Reference
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+  </div>
+</div>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show/README.md">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
