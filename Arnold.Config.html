@@ -10,7 +10,7 @@
     <title>Arnold.Config — Arnold v0.6.2</title>
     <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
 
-    <script src="dist/sidebar_items-bc1991841a.js"></script>
+    <script src="dist/sidebar_items-d84bde32ef.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -187,8 +187,8 @@ The following default configs are configured for Arnold:</p><h2 id="get/1-exampl
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="1753809845-1">(</span><span class="ss">:port</span><span class="p" data-group-id="1753809845-1">)</span><span class="w">
-</span><span class="p" data-group-id="1753809845-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">8081</span><span class="p" data-group-id="1753809845-2">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="1770009832-1">(</span><span class="ss">:port</span><span class="p" data-group-id="1770009832-1">)</span><span class="w">
+</span><span class="p" data-group-id="1770009832-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">8081</span><span class="p" data-group-id="1770009832-2">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre><p>The windows and ports are hard coded with the following default values:</p><pre><code class="makeup elixir" translate="no"><span class="ss">:hourly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="w">
 </span><span class="ss">:daily</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">96</span><span class="w">
 </span><span class="ss">:weekly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">168</span><span class="w">
@@ -199,8 +199,8 @@ variable.</p><h2 id="get/1-example-1" class="section-heading">
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="5984224743-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="5984224743-1">)</span><span class="w">
-</span><span class="p" data-group-id="5984224743-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="5984224743-2">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="2054343967-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="2054343967-1">)</span><span class="w">
+</span><span class="p" data-group-id="2054343967-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="2054343967-2">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -233,8 +233,8 @@ The following types are accepted:</p><ul><li><code class="inline">:hourly</code>
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="0399358630-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="0399358630-1">)</span><span class="w">
-</span><span class="p" data-group-id="0399358630-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="0399358630-2">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Config</span><span class="o">.</span><span class="n">get</span><span class="p" data-group-id="7425980520-1">(</span><span class="ss">:window</span><span class="p">,</span><span class="w"> </span><span class="ss">:hourly</span><span class="p" data-group-id="7425980520-1">)</span><span class="w">
+</span><span class="p" data-group-id="7425980520-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">3600</span><span class="p" data-group-id="7425980520-2">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>

@@ -7,10 +7,10 @@
     <meta name="generator" content="ExDoc v0.28.3">
     <meta name="project" content="Arnold v0.6.2">
 
-    <title>Arnold.Database.Table.NetworkModel — Arnold v0.6.2</title>
+    <title>Arnold.Plug.Router — Arnold v0.6.2</title>
     <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
 
-    <script src="dist/sidebar_items-bc1991841a.js"></script>
+    <script src="dist/sidebar_items-d84bde32ef.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -97,31 +97,23 @@ Arnold
 </button>
 
 
-  <span translate="no">Arnold.Database.Table.NetworkModel</span> 
+  <span translate="no">Arnold.Plug.Router</span> 
   <small class="app-vsn" translate="no">(Arnold v0.6.2)</small>
 
 </h1>
 
 
   <section id="moduledoc">
-<p>Memento table for neural network weights.</p><h2 id="module-structure" class="section-heading">
-  <a href="#module-structure" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">structure</p>
-  </a>
-  Structure
-</h2>
-<pre><code class="makeup elixir" translate="no"><span class="p" data-group-id="4859724373-1">%</span><span class="nc" data-group-id="4859724373-1">Arnold.Database.Table.NetworkModel</span><span class="p" data-group-id="4859724373-1">{</span><span class="w">
-  </span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="ss">dataset</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4859724373-2">%{</span><span class="p" data-group-id="4859724373-2">}</span><span class="p">,</span><span class="w">
-  </span><span class="ss">model</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4859724373-3">%{</span><span class="p" data-group-id="4859724373-3">}</span><span class="p">,</span><span class="w">
-  </span><span class="ss">model_state</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4859724373-4">%{</span><span class="p" data-group-id="4859724373-4">}</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="4859724373-1">}</span></code></pre><h2 id="module-attributes" class="section-heading">
-  <a href="#module-attributes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">attributes</p>
-  </a>
-  Attributes
-</h2>
-<ul><li><code class="inline">id</code>: table id, equal to sensor id</li><li><code class="inline">dataset</code>: dataset</li><li><code class="inline">model</code>: table id, equal to sensor id</li><li><code class="inline">model_state</code>: table id, equal to sensor id</li></ul>
+<p>Router for the REST API. There are 2 main routes, <code class="inline">get</code> and <code class="inline">post</code> paths. The body must be a json in all cases.</p><p><code class="inline">GET</code> paths:</p><ul><li><code class="inline">/api/tendency</code> (not used)</li><li><code class="inline">/api/seasonality</code> (not used)</li><li><code class="inline">/api/prediction</code></li></ul><p>All of them needs 3 common parameters:</p><ul><li><code class="inline">node</code></li><li><code class="inline">metric</code></li><li><code class="inline">tag</code></li></ul><p>Prediction route needs a 4th one:</p><ul><li><code class="inline">horizon</code></li></ul><p>As a result a sample url path should look like this (port can be customized):
+<code class="inline">http://localhost:8081/api/tendency?node=node_id&amp;metric=metric_id&amp;tag=hourly</code></p><p><code class="inline">POST</code> path:</p><ul><li><code class="inline">/api/write</code></li></ul><p>Parameters:</p><ul><li><code class="inline">node</code></li><li><code class="inline">metric</code></li></ul><p>Body:</p><ul><li><code class="inline">type</code></li><li><code class="inline">value</code></li><li><code class="inline">timestamp</code>
+Currently only gauge, counter, meter, spiral, histogram and durations are accepted via the router.
+A sample url:
+<code class="inline">http://localhost:8081/api/write?node=node_id&amp;metric=metric_id</code> with body as json</li></ul><pre><code class="json">{
+  &quot;type&quot;: &quot;gauge&quot;,
+  &quot;timestamp&quot;: 1642433780,
+  &quot;value&quot;: 75
+}</code></pre><p>Both <code class="inline">GET</code> and <code class="inline">POST</code> methods has built-in request verification. <a href="Arnold.Plug.InvalidGetParams.html"><code class="inline">Arnold.Plug.InvalidGetParams</code></a> or
+<a href="Arnold.Plug.InvalidPostParams.html"><code class="inline">Arnold.Plug.InvalidPostParams</code></a> errors are raised if the sent request are not valid.</p>
   </section>
 
 
@@ -134,16 +126,28 @@ Arnold
       Summary
     </h1>
 
-  <div class="summary-types summary">
+  <div class="summary-functions summary">
     <h2>
-      <a href="#types">Types</a>
+      <a href="#functions">Functions</a>
     </h2>
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#t:t/0" translate="no">t()</a>
+          <a href="#call/2" translate="no">call(conn, opts)</a>
 
         </div>
+
+          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/plug/1.13.6/Plug.html#c:call/2"><code class="inline">Plug.call/2</code></a>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#init/1" translate="no">init(opts)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/plug/1.13.6/Plug.html#c:init/1"><code class="inline">Plug.init/1</code></a>.</p></div>
 
       </div>
 
@@ -152,42 +156,47 @@ Arnold
   </section>
 
 
-  <section id="types" class="details-list">
+  <section id="functions" class="details-list">
     <h1 class="section-heading">
-      <a class="hover-link" href="#types">
+      <a class="hover-link" href="#functions">
         <i class="ri-link-m" aria-hidden="true"></i>
         <span class="sr-only">Link to this section</span>
       </a>
-Types
+Functions
     </h1>
-    <div class="types-list">
-<section class="detail" id="t:t/0">
+    <div class="functions-list">
+<section class="detail" id="call/2">
 
   <div class="detail-header">
-    <a href="#t:t/0" class="detail-link" title="Link to this type">
+    <a href="#call/2" class="detail-link" title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this type</span>
+      <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">t()</h1>
+    <h1 class="signature" translate="no">call(conn, opts)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-      <div class="specs">
+<p>Callback implementation for <a href="https://hexdocs.pm/plug/1.13.6/Plug.html#c:call/2"><code class="inline">Plug.call/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="init/1">
 
-          <pre translate="no"><span class="attribute">@type</span> t() :: %Arnold.Database.Table.NetworkModel{
-  __meta__: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-  dataset: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
-  id: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">binary</a>(),
-  model: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>(),
-  model_state: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">map</a>()
-}</pre>
-
-      </div>
+  <div class="detail-header">
+    <a href="#init/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">init(opts)</h1>
 
 
+  </div>
+
+  <section class="docstring">
+
+<p>Callback implementation for <a href="https://hexdocs.pm/plug/1.13.6/Plug.html#c:init/1"><code class="inline">Plug.init/1</code></a>.</p>
   </section>
 </section>
 
@@ -203,7 +212,7 @@ Types
               <a href="https://hex.pm/packages/arnold/0.6.2" class="line footer-hex-package">Package</a>
               <a href="https://preview.hex.pm/preview/arnold/0.6.2" class="line">Preview</a>
 
-                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show//Users/lengyeltamas/Projects/ESL/Arnold/lib/database/tables/network_model.ex">(current file)</a>
+                <a href="https://preview.hex.pm/preview/arnold/0.6.2/show//Users/lengyeltamas/Projects/ESL/Arnold/lib/plug/router.ex">(current file)</a>
 
             </span>
 

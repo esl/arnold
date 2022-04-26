@@ -10,7 +10,7 @@
     <title>Arnold.Statistics.ExponentialSmoothing — Arnold v0.6.2</title>
     <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
 
-    <script src="dist/sidebar_items-bc1991841a.js"></script>
+    <script src="dist/sidebar_items-d84bde32ef.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -205,11 +205,11 @@ for forecasting.</p><p>For more information checkout this page:
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="9744344239-1">(</span><span class="p" data-group-id="9744344239-2">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p" data-group-id="9744344239-2">]</span><span class="p" data-group-id="9744344239-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.ExponentialSmoothing</span><span class="o">.</span><span class="n">double</span><span class="w">
-</span><span class="p" data-group-id="9744344239-3">#</span><span class="nc" data-group-id="9744344239-3">Nx.Tensor</span><span class="p" data-group-id="9744344239-3">&lt;</span><span class="w">
-  </span><span class="n">f32</span><span class="p" data-group-id="9744344239-4">[</span><span class="mi">1</span><span class="p" data-group-id="9744344239-4">]</span><span class="w">
-  </span><span class="p" data-group-id="9744344239-5">[</span><span class="mf">9.0</span><span class="p" data-group-id="9744344239-5">]</span><span class="w">
-</span><span class="p" data-group-id="9744344239-3">&gt;</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="3890453900-1">(</span><span class="p" data-group-id="3890453900-2">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p" data-group-id="3890453900-2">]</span><span class="p" data-group-id="3890453900-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.ExponentialSmoothing</span><span class="o">.</span><span class="n">double</span><span class="w">
+</span><span class="p" data-group-id="3890453900-3">#</span><span class="nc" data-group-id="3890453900-3">Nx.Tensor</span><span class="p" data-group-id="3890453900-3">&lt;</span><span class="w">
+  </span><span class="n">f32</span><span class="p" data-group-id="3890453900-4">[</span><span class="mi">1</span><span class="p" data-group-id="3890453900-4">]</span><span class="w">
+  </span><span class="p" data-group-id="3890453900-5">[</span><span class="mf">9.0</span><span class="p" data-group-id="3890453900-5">]</span><span class="w">
+</span><span class="p" data-group-id="3890453900-3">&gt;</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -246,11 +246,11 @@ smoothing coefficient.</p><p>For more information checkout this page:
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="0676828357-1">(</span><span class="p" data-group-id="0676828357-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="0676828357-2">]</span><span class="p" data-group-id="0676828357-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.ExponentialSmoothing</span><span class="o">.</span><span class="n">simple</span><span class="w">
-</span><span class="p" data-group-id="0676828357-3">#</span><span class="nc" data-group-id="0676828357-3">Nx.Tensor</span><span class="p" data-group-id="0676828357-3">&lt;</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="4237003375-1">(</span><span class="p" data-group-id="4237003375-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="4237003375-2">]</span><span class="p" data-group-id="4237003375-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.ExponentialSmoothing</span><span class="o">.</span><span class="n">simple</span><span class="w">
+</span><span class="p" data-group-id="4237003375-3">#</span><span class="nc" data-group-id="4237003375-3">Nx.Tensor</span><span class="p" data-group-id="4237003375-3">&lt;</span><span class="w">
   </span><span class="n">f32</span><span class="w">
   </span><span class="mf">2.1164159774780273</span><span class="w">
-</span><span class="p" data-group-id="0676828357-3">&gt;</span><span class="w">
+</span><span class="p" data-group-id="4237003375-3">&gt;</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -291,17 +291,17 @@ three smoothing parameters alpha(α),beta(β),gamma(γ).</p><p>For more informat
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="5414821467-1">(</span><span class="p" data-group-id="5414821467-2">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="5414821467-2">]</span><span class="p" data-group-id="5414821467-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.ExponentialSmoothing</span><span class="o">.</span><span class="n">triple</span><span class="p" data-group-id="5414821467-3">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="5414821467-3">)</span><span class="w">
-</span><span class="p" data-group-id="5414821467-4">[</span><span class="w">
-</span><span class="p" data-group-id="5414821467-5">#</span><span class="nc" data-group-id="5414821467-5">Nx.Tensor</span><span class="p" data-group-id="5414821467-5">&lt;</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p" data-group-id="6647293880-1">(</span><span class="p" data-group-id="6647293880-2">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="6647293880-2">]</span><span class="p" data-group-id="6647293880-1">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Analyser.ExponentialSmoothing</span><span class="o">.</span><span class="n">triple</span><span class="p" data-group-id="6647293880-3">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="6647293880-3">)</span><span class="w">
+</span><span class="p" data-group-id="6647293880-4">[</span><span class="w">
+</span><span class="p" data-group-id="6647293880-5">#</span><span class="nc" data-group-id="6647293880-5">Nx.Tensor</span><span class="p" data-group-id="6647293880-5">&lt;</span><span class="w">
   </span><span class="n">f32</span><span class="w">
   </span><span class="mf">13.446951866149902</span><span class="w">
-</span><span class="p" data-group-id="5414821467-5">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5414821467-6">#</span><span class="nc" data-group-id="5414821467-6">Nx.Tensor</span><span class="p" data-group-id="5414821467-6">&lt;</span><span class="w">
+</span><span class="p" data-group-id="6647293880-5">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="6647293880-6">#</span><span class="nc" data-group-id="6647293880-6">Nx.Tensor</span><span class="p" data-group-id="6647293880-6">&lt;</span><span class="w">
   </span><span class="n">f32</span><span class="w">
   </span><span class="mf">14.956113815307617</span><span class="w">
-</span><span class="p" data-group-id="5414821467-6">&gt;</span><span class="w">
-</span><span class="p" data-group-id="5414821467-4">]</span><span class="w">
+</span><span class="p" data-group-id="6647293880-6">&gt;</span><span class="w">
+</span><span class="p" data-group-id="6647293880-4">]</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>

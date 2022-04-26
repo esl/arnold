@@ -10,7 +10,7 @@
     <title>Arnold.Utilities — Arnold v0.6.2</title>
     <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
 
-    <script src="dist/sidebar_items-bc1991841a.js"></script>
+    <script src="dist/sidebar_items-d84bde32ef.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -274,7 +274,7 @@ iex(2)&gt;</p>
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">id</span><span class="p" data-group-id="1859698256-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor&quot;</span><span class="p" data-group-id="1859698256-1">)</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">id</span><span class="p" data-group-id="3065236802-1">(</span><span class="s">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensor&quot;</span><span class="p" data-group-id="3065236802-1">)</span><span class="w">
 </span><span class="s">&quot;85a68cb6-04c7-5a78-8f4c-bcc184186b6b&quot;</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
@@ -324,7 +324,7 @@ iex(2)&gt;</p>
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">is_constant?</span><span class="p" data-group-id="9137314035-1">(</span><span class="p" data-group-id="9137314035-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="9137314035-2">]</span><span class="p" data-group-id="9137314035-1">)</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">is_constant?</span><span class="p" data-group-id="4635177222-1">(</span><span class="p" data-group-id="4635177222-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="4635177222-2">]</span><span class="p" data-group-id="4635177222-1">)</span><span class="w">
 </span><span class="no">false</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
@@ -359,7 +359,7 @@ Mainly used in pipe operations</p><h2 id="normal_result/1-example" class="sectio
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="3528958421-1">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="3528958421-1">)</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="8334156691-1">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8334156691-1">)</span><span class="w">
 </span><span class="gp unselectable">...(1)&gt; </span><span class="o">|&gt;</span><span class="w"> </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normal_result</span><span class="w">
 </span><span class="mf">0.75</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
@@ -395,8 +395,8 @@ Calls to <a href="#normalize/3"><code class="inline">Arnold.Utilities.normalize/
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="6925258077-1">(</span><span class="p" data-group-id="6925258077-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="6925258077-2">]</span><span class="p" data-group-id="6925258077-1">)</span><span class="w">
-</span><span class="p" data-group-id="6925258077-3">{</span><span class="p" data-group-id="6925258077-4">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p" data-group-id="6925258077-4">]</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6925258077-3">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="4928373333-1">(</span><span class="p" data-group-id="4928373333-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="4928373333-2">]</span><span class="p" data-group-id="4928373333-1">)</span><span class="w">
+</span><span class="p" data-group-id="4928373333-3">{</span><span class="p" data-group-id="4928373333-4">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p" data-group-id="4928373333-4">]</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="4928373333-3">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -430,8 +430,8 @@ For every element <a href="#normalize/3"><code class="inline">Arnold.Utilities.n
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="8434085806-1">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8434085806-1">)</span><span class="w">
-</span><span class="p" data-group-id="8434085806-2">{</span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="8434085806-2">}</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">normalize</span><span class="p" data-group-id="5189718084-1">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="5189718084-1">)</span><span class="w">
+</span><span class="p" data-group-id="5189718084-2">{</span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="5189718084-2">}</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
@@ -463,8 +463,8 @@ For every element <a href="#normalize/3"><code class="inline">Arnold.Utilities.n
   </a>
   Example
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">truncate</span><span class="p" data-group-id="1781560178-1">(</span><span class="p" data-group-id="1781560178-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="1781560178-2">]</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="1781560178-1">)</span><span class="w">
-</span><span class="p" data-group-id="1781560178-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="1781560178-3">]</span><span class="w">
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex(1)&gt; </span><span class="nc">Arnold.Utilities</span><span class="o">.</span><span class="n">truncate</span><span class="p" data-group-id="0860204974-1">(</span><span class="p" data-group-id="0860204974-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="0860204974-2">]</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="0860204974-1">)</span><span class="w">
+</span><span class="p" data-group-id="0860204974-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="0860204974-3">]</span><span class="w">
 </span><span class="gp unselectable">iex(2)&gt;</span></code></pre>
   </section>
 </section>
