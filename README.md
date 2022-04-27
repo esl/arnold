@@ -176,3 +176,7 @@ config :arnold, port: 8081
 
 ## License
 MIT
+
+## Contact
+For any questions regarding Arnold 
+* Tamás Lengyel: tamas.lengyel@erlang-solutions.com
