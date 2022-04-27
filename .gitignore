@@ -31,3 +31,12 @@ arnold-*.tar
 
 # Folder for Arnold releases
 /releases
+
+# Database of Arnold
+/.mnesia
+
+# Log files of Arnold
+/logs
+
+# Arnold uses libraries that are currently in development, version can change from day to day or hour to hour
+mix.lock
