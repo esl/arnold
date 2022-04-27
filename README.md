@@ -69,14 +69,18 @@ Recommened way of start a Arnold node is the interactive mode with the shell usi
 foo@bar:~$ make console
 ```
 
-If you would like to create a release version of Arnold `TARGET` varibale should be set before
+If you would like to create a release version of Arnold `target` argument should be set before
 running `distillery`.
 
+Acceptable args:
+* `osx`
+* `linux`
+
 ```bash
-foo@bar:~$ make release TARGET=osx
+foo@bar:~$ make release target=osx
 ```
 
-If not set it is going to use the default `dev` environment. All configurations can be checked
+If not set or target is invalid than default `dev` environment is going to be used. All configurations can be checked
 in the `rel/config.exs`
 
 ## Basic Usage
@@ -143,7 +147,7 @@ Returning data is [Highcharts](https://www.highcharts.com/) friendly for easier 
  - `compile`: Compiles Arnold
  - `deps`: Gets the deps
  - `build`: Previos two commands together. Needs a clean repo.
- - `release`: Creates a release. If `TARGET` is defined it uses the given values as a mix environment.
+ - `release`: Creates a release. If `target` is defined it uses the given values as a mix environment.
  - `console`: Starts a dev console
  - `docs`: Makes the docs using ExDoc
  - `dialyzer`: Runs dialyzer
