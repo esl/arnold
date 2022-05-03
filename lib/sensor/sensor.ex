@@ -43,7 +43,7 @@ defmodule Arnold.Sensor do
   end
 
   def new(_, _, _) do
-    raise ArgumentError, message: "invalid argument while creating sensor"
+    raise ArgumentError, message: "Invalid argument while creating sensor"
   end
 
   @doc """
@@ -69,11 +69,15 @@ defmodule Arnold.Sensor do
   """
   @doc since: "0.6.0"
   @spec update(sensor :: map, timestamp :: pos_integer, value :: number) :: map
-  def update(sensor, timestamp, value) do
+  def update(sensor, timestamp, value) when is_number(value) do
     hourly = [{timestamp, value} | sensor.hourly]
     daily = do_update(sensor.daily, hourly, timestamp, @limit_daily)
     weekly = do_update(sensor.weekly, hourly, timestamp, @limit_weekly)
     %{sensor | hourly: hourly, daily: daily, weekly: weekly}
+  end
+
+  def update(_,_,_) do
+    raise ArgumentError, message: "Invalid argument while updating sensor"
   end
 
   @doc """
