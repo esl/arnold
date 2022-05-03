@@ -1,4 +1,4 @@
-defmodule ArnoldTest do
+defmodule ArnoldSensorTest do
   use ExUnit.Case, async: true
   # doctest Arnold.Sensor
 

@@ -32,6 +32,7 @@ defmodule Arnold.Config do
   The following default configs are configured for Arnold:
 
   ## Example
+
   ```
   iex(1)> Arnold.Config.get(:port)
   {:ok, 8081}
@@ -50,9 +51,8 @@ defmodule Arnold.Config do
 
   ## Example
   ```
-  iex(1)> Arnold.Config.get(:window, :hourly)
-  {:ok, 60, 3600}
-  iex(2)>
+  iex(1)> Arnold.Config.get(:windows)
+  {:ok, [{:hourly, 180}, {:daily, 192}, {:weekly, 336}]}
   ```
   """
   @doc since: "0.6.2"
@@ -75,8 +75,7 @@ defmodule Arnold.Config do
   ## Example
   ```
   iex(1)> Arnold.Config.get(:window, :hourly)
-  {:ok, 60, 3600}
-  iex(2)>
+  {:ok, 180, 3600}
   ```
   """
   @doc since: "0.5.4"

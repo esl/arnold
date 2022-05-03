@@ -47,8 +47,9 @@ defmodule Arnold.Utilities do
   ## Example
   ```
   iex(1)> Arnold.Utilities.normalize(4,1,5)
-  {0.75, 1, 5}
-  iex(2)>
+  0.75
+  iex(2)> Arnold.Utilities.normalize([4,3,4,1], 1,5)
+  {[0.75, 0.5, 0.75, 0.0], 1, 5}
   ```
   """
   @doc since: "0.5.4"
@@ -71,9 +72,9 @@ defmodule Arnold.Utilities do
 
   ## Example
   ```
-  iex(1)> Arnold.Utilities.normalize(4,1,5)
+  iex(1)> Arnold.Utilities.normalize([4,3,4,1],1,5)
   ...(1)> |> Arnold.Utilities.normal_result
-  0.75
+  [0.75, 0.5, 0.75, 0.0]
   iex(2)>
   ```
   """
@@ -107,8 +108,12 @@ defmodule Arnold.Utilities do
   """
   @doc since: "0.6.2"
   @spec id(id1 :: binary, id2 :: binary) :: binary
-  def id(id1, id2) do
+  def id(id1, id2) when is_binary(id1) and is_binary(id2) do
     UUID.uuid5(:dns, id1 <> id2)
+  end
+
+  def id(_, _) do
+    raise ArgumentError, message: "Invalid argument. Check if both parameters are binaries or strings"
   end
 
   @doc """
@@ -131,8 +136,21 @@ defmodule Arnold.Utilities do
     Enum.all?(list, fn x -> x == h end)
   end
 
+  @doc """
+  Converts an integer to bool.
+  1 = true, otherwise false.
+
+  ## Example
+  ```
+  iex(1)> Arnold.Utilities.integer_to_boolean(1)
+  true
+  iex(2)> Arnold.Utilities.integer_to_boolean(2)
+  false
+  ```
+  """
+  @spec integer_to_boolean(number :: integer) :: boolean
   def integer_to_boolean(number) do
-    if number == 1, do: true, else: false
+    number == 1
   end
 
 end
