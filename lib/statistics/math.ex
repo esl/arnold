@@ -11,7 +11,7 @@ defmodule Arnold.Statistics.Math do
 
   ## Example
   ```
-  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Analyser.Math.sma(2)
+  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Statistics.Math.sma(2)
   #Nx.Tensor<
     f32[5]
     [1.5, 2.5, 3.5, 4.5, 5.5]
@@ -32,7 +32,7 @@ defmodule Arnold.Statistics.Math do
 
   ## Example
   ```
-  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Analyser.Math.variance
+  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Statistics.Math.variance
   #Nx.Tensor<
     f32
     3.5
@@ -53,7 +53,7 @@ defmodule Arnold.Statistics.Math do
 
   ## Example
   ```
-  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Analyser.Math.devsq
+  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Statistics.Math.devsq
   #Nx.Tensor<
     f32
     17.5
@@ -76,11 +76,10 @@ defmodule Arnold.Statistics.Math do
 
   ## Example
   ```
-  iex(1)> Arnold.Analyser.Math.percentage(5,4)
+  iex(1)> Arnold.Statistics.Math.percentage(5,4)
   0.8
-  iex(2)> Arnold.Analyser.Math.percentage(4,5)
+  iex(2)> Arnold.Statistics.Math.percentage(4,5)
   0.8
-  iex(3)>
   ```
   """
   @doc since: "0.5.4"
@@ -104,7 +103,7 @@ defmodule Arnold.Statistics.Math do
 
   ## Example
   ```
-  iex(1)> Arnold.Analyser.Math.std(Nx.tensor([4,7,2,1,6,3]))
+  iex(1)> Arnold.Statistics.Math.std(Nx.tensor([4,7,2,1,6,3]))
   #Nx.Tensor<
     f32
     2.114763021469116

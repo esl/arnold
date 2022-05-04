@@ -21,12 +21,11 @@ defmodule Arnold.Statistics.ExponentialSmoothing do
 
   ## Example
   ```
-  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Analyser.ExponentialSmoothing.simple
-  #Nx.Tensor<
+  iex(1)> Nx.tensor([1,2,3,4,5,6]) |> Arnold.Statistics.ExponentialSmoothing.simple
+  [#Nx.Tensor<
     f32
-    2.1164159774780273
-  >
-  iex(2)>
+    3.1514244079589844
+  >]
   ```
   """
   @doc since: "0.5.4"
@@ -52,12 +51,11 @@ defmodule Arnold.Statistics.ExponentialSmoothing do
 
   ## Example
   ```
-  iex(1)> Nx.tensor([10,11,12,13]) |> Arnold.Analyser.ExponentialSmoothing.double
+  iex(1)> Nx.tensor([10,11,12,13]) |> Arnold.Statistics.ExponentialSmoothing.double
   #Nx.Tensor<
     f32[1]
     [9.0]
   >
-  iex(2)>
   ```
   """
   @doc since: "0.5.5"
@@ -82,18 +80,37 @@ defmodule Arnold.Statistics.ExponentialSmoothing do
 
   ## Example
   ```
-  iex(1)> Nx.tensor([10,11,12,13,12,11,10,11,12,14,13,11,10]) |> Arnold.Analyser.ExponentialSmoothing.triple(2,7)
+  iex(1)> Nx.tensor([10,11,12,13,12,11,10,11,12,14,13,11,10]) |> Arnold.Statistics.ExponentialSmoothing.triple(2,7)
   [
-  #Nx.Tensor<
-    f32
-    13.446951866149902
-  >,
-  #Nx.Tensor<
-    f32
-    14.956113815307617
-  >
+    #Nx.Tensor<
+      f32
+      16.945600509643555
+    >,
+    #Nx.Tensor<
+      f32
+      18.66143798828125
+    >,
+    #Nx.Tensor<
+      f32
+      18.570167541503906
+    >,
+    #Nx.Tensor<
+      f32
+      20.29241180419922
+    >,
+    #Nx.Tensor<
+      f32
+      20.207643508911133
+    >,
+    #Nx.Tensor<
+      f32
+      22.02154541015625
+    >,
+    #Nx.Tensor<
+      f32
+      21.94183349609375
+    >
   ]
-  iex(2)>
   ```
   """
   @doc since: "0.5.5"
