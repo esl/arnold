@@ -4,6 +4,8 @@ defmodule Arnold.Statistics.MannKendall do
 
   @alpha 0.05
 
+  @spec execute(Nx.Tensor.t) ::
+          {pos_integer, float, Nx.Tensor.t, Nx.Tensor.t, Nx.Tensor.t, Nx.Tensor.t, Nx.Tensor.t, boolean}
   def execute(input) do
     n = Nx.size(input)
     f = input |> ties_correction(n-1)

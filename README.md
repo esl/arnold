@@ -177,6 +177,18 @@ config :arnold, port: 8081
  - **Dialyxir**: dev only, dialyzer
  - **ExDocs**: dev only, Documentation of the project
 
+## Testing
+To test your code the recommended actions are running `dialyzer` along with the unit test
+
+To run dialyzer:
+```bash
+foo@bar:~$ make dialyzer
+```
+
+To run unit test:
+```bash
+foo@bar:~$ mix test
+```
 
 ## License
 MIT
