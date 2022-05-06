@@ -1,0 +1,47 @@
+name: Arnold CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+env:
+  OTP-VERSION: '24.1.2'
+  ELIXIR-VERSION: '1.13.2'
+
+jobs:
+  dialyzer:
+    name: Dialyzer
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Elixir
+      uses: erlef/setup-beam@v1
+      with:
+        otp-version: ${{ env.OTP-VERSION }}
+        elixir-version: ${{ env.ELIXIR-VERSION }}
+    - name: Install dependencies
+      run: mix deps.get
+    - name: Run dialyzer
+      run: mix dialyzer
+  
+  unit_tests:
+    name: Eunit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Elixir
+      uses: erlef/setup-beam@v1
+      with:
+        otp-version: ${{ env.OTP-VERSION }}
+        elixir-version: ${{ env.ELIXIR-VERSION }}
+    - name: Install dependencies
+      run: mix deps.get
+    - name: Run tests
+      run: mix test
